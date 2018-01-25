@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MADE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p><a href="https://github.com/Yii2You"><img src="https://avatars0.githubusercontent.com/u/35477647?s=100&amp;v=4" /></a>
+<a href="https://github.com/yiisoft"><img src="https://avatars0.githubusercontent.com/u/993323?s=100&amp;v=4" /></a></p>
+<h1>BMatriX Yii2 - проект CMS Yii2You</h1>
+<h2>Процесс разработки</h2>
+<p>В данном файле описан весь процесс разработки &quot;с самого нуля&quot;</p>
+<h4>Ссылки</h4>
+<p><a href="http://www.elisdn.ru/blog/tag/SeoKeys" title="Дмитрий Елисеев » Блог ">Дмитрий Елисеев » Блог » Программирование » Записи с меткой «SeoKeys»</a></p>
+<h2><a name="list">Содержание</a></h2>
+<ol>
+<li><a href="#setup">Установка фреймворка</a></li>
+<li><a href="#git">Подключаем <code>git</code></a></li>
+<li><a href="#config">Конфигурация приложения</a></li>
+<li><a href="#modules">Переход к модульной структуре</a></li>
+<li><a href="#db_user">Перенос пользователей в БД</a></li>
+<li><a href="#feedback">Автозаполнение формы обратной связи</a></li>
+<li><a href="#console">Консольное управление</a></li>
+<li><a href="#template">Доработка шаблона приложения</a></li>
+<li><a href="#lang">Язык интерфейса приложения</a></li>
+</ol>
+<h3>PhpStorm</h3>
+<p>Активация <code>IntelliJ IDEA 2017.3 and 2018</code> с помощью интернет серверов:</p>
+<pre><code>http://idea.singee77.com
+http://idea.ibdyr.com
+http://ice-cloud.ru:1017
+http://noddes.ru:1017
+http://roothat.ru:1017
+</code></pre>
+
+<h2><a href="#list" name="target">Установка фреймворка</a></h2>
+<h3>Установка фреймворка через <code>composer</code></h3>
+<p>Yii2 доступен для быстрой установки из репозитория.</p>
+<pre><code>https://github.com/yiisoft/yii2-app-basic.git
+https://github.com/yiisoft/yii2-app-advanced.git
+</code></pre>
+
+<p>Для установки запускаем консоль и переходим в корень проекта </p>
+<pre><code>cd /path/domain/name
+</code></pre>
+
+<p>Для начала установим плагин для работы с менеджером <strong>Bower</strong>, затем устанавливаем пакет в текущий каталог.  Флаг <code>--stability=dev</code> не указываем, чтобы не скачивать нестабильные версии.
+Шаблон будет развёрнут в корне, а все нужные зависимости скачаны в поддиректорию <code>vendor</code>.</p>
+<p>Установим <code>yii2-app-basic</code>:</p>
+<pre><code>composer global require &quot;fxp/composer-asset-plugin:^1.2.0&quot;
+composer create-project --prefer-dist yiisoft/yii2-app-basic ./
+</code></pre>
+
+<p>После установки запускаем обновления</p>
+<pre><code>composer update
+</code></pre>
+
+<h3>Конфигурация сервера</h3>
+<p>Первым делом проверим наш сервер. Запускаем в консоли:</p>
+<pre><code>php requirements.php
+</code></pre>
+
+<h4>Файл <code>php.ini</code></h4>
+<p>Для работы с <code>MySQL</code>-базами можно помимо <code>Intl</code>, <code>MBString</code> и <code>MCrypt</code> подключить только связанные с <code>MySQL</code> расширения:</p>
+<pre><code>extension=php_intl.dll
+extension=php_mbstring.dll
+extension=php_mcrypt.dll
+extension=php_mysql.dll
+extension=php_mysqli.dll
+extension=php_pdo_mysql.dll
+</code></pre>
+
+<p>Устанавливаем временную зону:</p>
+<pre><code>date.timezone = &quot;Europe/Samara&quot;
+</code></pre>
+
+<h2><a href="#list" name="git">Используем <code>git</code> через консоль</a></h2>
+<pre><code>git init
+git add README.md
+git commit -m &quot;Initial commit&quot;
+</code></pre>
+
+<blockquote>
+<p>В этом проекте коммиты делались позже...
+После создания всех необходимых файлов и настроек</p>
+</blockquote>
+<pre><code>git add .
+git commit -m &quot;Create project&quot;
+</code></pre>
+
+<h3>Настройка <code>.gitignore</code></h3>
+<p>Создаём файл <code>config/.gitignore</code> и указываем не индексировать личные настройки:</p>
+<pre><code>/db.php
+/params.php
+</code></pre>
+
+<p>Создаём файл <code>web/.gitignore</code> и вписываем исключаемые файлы конкретно в этой папке:</p>
+<pre><code>/.htaccess
+/index.php
+/index-test.php
+</code></pre>
+
+<h3>Настройка <code>urlManager</code>:</h3>
+<pre><code>'components' =&gt; [
+...
+    'urlManager' =&gt; [
+        'enablePrettyUrl' =&gt; true,
+        'showScriptName' =&gt; false,
+        'rules' =&gt; [
+            '&lt;_c:[\w\-]+&gt;/&lt;id:\d+&gt;' =&gt; '&lt;_c&gt;/view',
+            '&lt;_c:[\w\-]+&gt;' =&gt; '&lt;_c&gt;/index',
+            '&lt;_c:[\w\-]+&gt;/&lt;_a:[\w\-]+&gt;/&lt;id:\d+&gt;' =&gt; '&lt;_c&gt;/&lt;_a&gt;',
+        ],
+    ],
+...
+],
+</code></pre>
+
+<p>Теперь, собственно, создаём файл <code>web/.htaccess</code>:</p>
+<pre><code>Order Allow,Deny
+Allow from all
+
+AddDefaultCharset utf-8
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+</code></pre>
+
+<p>В корне создаём файл <code>.htaccess</code></p>
+<pre><code>AddDefaultCharset utf-8
+
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
+RewriteRule ^css/(.*)$ /web/css/$1 [L]
+RewriteRule ^js/(.*)$ /web/js/$1 [L]
+RewriteRule ^images/(.*)$ /web/images/$1 [L]
+RewriteRule (.*)$ /web/$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /web/index.php
+</code></pre>
+
+<h2><a href="#list" name="config">Конфигурация приложения</a></h2>
+<p>В файлах <code>config/web.php</code> и <code>config/console.php</code> параметры включаются из одного файла:</p>
+<pre><code>$params = require(__DIR__ . '/params.php');
+
+return [
+    ...
+    'params' =&gt; $params,
+];
+</code></pre>
+
+<p>Удалим адрес из <code>config/params.php</code> и добавим параметр <code>supportEmail</code>:</p>
+<pre><code>return [
+    'adminEmail' =&gt; '',
+    'supportEmail' =&gt; '',
+];
+</code></pre>
+
+<p>и перенесём его в новый файл <code>config/params-local.php</code>:</p>
+<pre><code>return [
+    'adminEmail' =&gt; 'admin@example.com',
+    'supportEmail' =&gt; 'info@example.com',
+];
+</code></pre>
+
+<p>Второй параметр нам пригодится для указания в поле <code>From</code> для отправляемых с сайта писем. В коде контактной формы по умолчанию туда подставляется адрес отправителя, пишущего сообщение:</p>
+<pre><code>class ContactForm extends Model
+{
+    ...
+
+    public function contact($email)
+    {
+        if ($this-&gt;validate()) {
+            Yii::$app-&gt;mailer-&gt;compose()
+                -&gt;setTo($email)
+                -&gt;setFrom([$this-&gt;email =&gt; $this-&gt;name])
+                -&gt;setSubject($this-&gt;subject)
+                -&gt;setTextBody($this-&gt;body)
+                -&gt;send();
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+</code></pre>
+
+<p>Но привередливые почтовые системы вроде <strong><em>MailRu</em></strong> никак не принимают письма с подменённым именем отправителя. Соответственно лучше в поле From подставлять фиксированный адрес, а <strong><em>Email</em></strong> отправителя подставлять в поле <strong><em>ReplyTo</em></strong>:</p>
+<pre><code>class ContactForm extends Model
+{
+    ...
+
+    public function contact($email)
+    {
+        if ($this-&gt;validate()) {
+            Yii::$app-&gt;mailer-&gt;compose()
+                -&gt;setTo($email)
+                -&gt;setFrom([Yii::$app-&gt;params['supportEmail'] =&gt; Yii::$app-&gt;name])
+                -&gt;setReplyTo([$this-&gt;email =&gt; $this-&gt;name])
+                -&gt;setSubject($this-&gt;subject)
+                -&gt;setTextBody($this-&gt;body)
+                -&gt;send();
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+</code></pre>
+
+<p>Теперь если администратор нажмёт «Ответить» в письме, то в поле Кому подставится именно оригинальный адрес отправителя.</p>
+<p>Откроем <code>cofig/.gitignore</code> и заменим его содержимое на:</p>
+<pre><code>/db.php
+*-local.php
+</code></pre>
+
+<p>Файл <code>params.php</code> теперь проиндексируется и попадёт в общий репозиторий, а <code>params-local.php</code> останется только на вашем компьютере. Каждый разработчик может добавить свой файл <code>params-local.php</code> с личными параметрами и не переживать за свои пароли.</p>
+<p>Теперь в <code>config/web.php</code> и <code>config/console.php</code> добавим механизм склейки файлов:</p>
+<pre><code>use yii\helpers\ArrayHelper;
+
+...
+
+$params = ArrayHelper::merge(
+    require(__DIR__ . '/params.php'),
+    require(__DIR__ . '/params-local.php')
+);
+
+...
+</code></pre>
+
+<p>Аналогично сделаем возможность переопределять настройки компонентов приложения.</p>
+<p>На примере более «продвинутого» <code>advanced</code>-шаблона создадим файл <code>config/common.php</code> с общими настройками:</p>
+<pre><code>use yii\helpers\ArrayHelper;
+
+$params = ArrayHelper::merge(
+    require(__DIR__ . '/params.php'),
+    require(__DIR__ . '/params-local.php')
+);
+
+return [
+    'basePath' =&gt; dirname(__DIR__),
+    'bootstrap' =&gt; ['log'],
+    'components' =&gt; [
+        'db' =&gt; [
+            'class' =&gt; 'yii\db\Connection',
+            'charset' =&gt; 'utf8',
+        ],
+        'urlManager' =&gt; [
+            'class' =&gt; 'yii\web\UrlManager',
+                'enablePrettyUrl' =&gt; true,
+                'showScriptName' =&gt; false,
+                'rules' =&gt; [
+                    '&lt;_c:[\w\-]+&gt;/&lt;id:\d+&gt;' =&gt; '&lt;_c&gt;/view',
+                    '&lt;_c:[\w\-]+&gt;' =&gt; '&lt;_c&gt;/index',
+                    '&lt;_c:[\w\-]+&gt;/&lt;_a:[\w\-]+&gt;/&lt;id:\d+&gt;' =&gt; '&lt;_c&gt;/&lt;_a&gt;',
+                ],
+        ],
+        'mailer' =&gt; [
+            'class' =&gt; 'yii\swiftmailer\Mailer',
+        ],
+        'cache' =&gt; [
+            'class' =&gt; 'yii\caching\DummyCache',
+        ],
+        'log' =&gt; [
+            'class' =&gt; 'yii\log\Dispatcher',
+        ],
+    ],
+    'params' =&gt; $params,
+];
+</code></pre>
+
+<p>Рядом положим <code>config/common-local.php</code> с недостающими личными параметрами для соответствующих компонентов:</p>
+<pre><code>return [
+    'components' =&gt; [
+        'db' =&gt; [
+            'dsn' =&gt; 'mysql:host=localhost;dbname=seokeys',
+            'username' =&gt; 'root',
+            'password' =&gt; '',
+            'tablePrefix' =&gt; 'keys_',
+        ],
+        'mailer' =&gt; [
+            'useFileTransport' =&gt; true,
+        ],
+        'cache' =&gt; [
+            'class' =&gt; 'yii\caching\FileCache',
+        ],
+    ],
+];
+</code></pre>
+
+<p>При слиянии конфигураций наши локальные настройки переопределят общие. Второй файл не попадёт в репозиторий системы контроля версий, так как он тоже назван в виде <code>*-local.php</code>.</p>
+<p>Заменим содержимое <code>config/.gitignore</code> на:</p>
+<pre><code>*-local.php
+</code></pre>
+
+<p>То есть мы убрали игнорирование файла <code>config/db.php</code>. Он нам больше не нужен. Удалим его:</p>
+<pre><code>rm config/db.php
+</code></pre>
+
+<p>Теперь из <code>config/console.php</code> и <code>config/web.php</code> мы можем убрать все общие настройки. Оставим там только индивидуальные.</p>
+<p>Специфические параметры web-приложения <code>config/web.php</code>:</p>
+<pre><code>$config = [
+    'id' =&gt; 'app',
+    'components' =&gt; [
+        'user' =&gt; [
+            'identityClass' =&gt; 'app\models\User',
+            'enableAutoLogin' =&gt; true,
+        ],
+        'errorHandler' =&gt; [
+            'errorAction' =&gt; 'site/error',
+        ],
+        'request' =&gt; [
+            'cookieValidationKey' =&gt; '',
+        ],
+        'log' =&gt; [
+            'traceLevel' =&gt; YII_DEBUG ? 3 : 0,
+        ],
+    ],
+];
+
+if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = 'yii\debug\Module';
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = 'yii\gii\Module';
+}
+
+return $config;
+</code></pre>
+
+<p>Параметры консольного режима <code>config/console.php</code>:</p>
+<pre><code>Yii::setAlias('@tests', dirname(__DIR__) . '/tests');
+
+return [
+    'id' =&gt; 'app-console',
+    'bootstrap' =&gt; ['gii'],
+    'controllerNamespace' =&gt; 'app\commands',
+    'modules' =&gt; [
+        'gii' =&gt; 'yii\gii\Module',
+    ],
+];
+</code></pre>
+
+<p>И дополнительно добавим возможность локального переопределения каждого варианта. Например, доработав один из рецептов из Yii Application Development Cookbook для Yii1 сделаем логирование в раздельные файлы:</p>
+<p>Личные настройки <code>config/web-local.php</code>:</p>
+<pre><code>return [
+    'components' =&gt; [
+        'request' =&gt; [
+            'cookieValidationKey' =&gt; 'jshd3qjaxp',
+        ],
+        'assetManager' =&gt; [
+            'linkAssets' =&gt; true,
+        ],
+        'log' =&gt; [
+            'targets' =&gt; [
+                [
+                    'class' =&gt; 'yii\log\FileTarget',
+                    'levels' =&gt; ['error'],
+                    'logFile' =&gt; '@app/runtime/logs/web-error.log'
+                ],
+                [
+                    'class' =&gt; 'yii\log\FileTarget',
+                    'levels' =&gt; ['warning'],
+                    'logFile' =&gt; '@app/runtime/logs/web-warning.log'
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+
+<p>Здесь мы от себя установили параметр <code>linkAssets</code> компонента <code>assetManager</code> в <code>true</code>, чтобы фреймворк не копировал папки в <code>web/assets</code>, а делал символические ссылки. Это и экономит место, и позволяет не удалять и перегенерировать папки при каждом обновлении вендоров.</p>
+<p>Личные настройки <code>config/console-local.php</code>:</p>
+<pre><code>return [
+    'components' =&gt; [
+        'log' =&gt; [
+            'targets' =&gt; [
+                [
+                    'class' =&gt; 'yii\log\FileTarget',
+                    'levels' =&gt; ['error'],
+                    'logFile' =&gt; '@app/runtime/logs/console-error.log'
+                ],
+                [
+                    'class' =&gt; 'yii\log\FileTarget',
+                    'levels' =&gt; ['warning'],
+                    'logFile' =&gt; '@app/runtime/logs/console-warning.log'
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+
+<p>Получилась гибкая система конфигурации.</p>
+<p>В результате у нас получился целый набор файлов:</p>
+<pre><code>config/
+    common.php
+    common-local.php
+    console.php
+    console-local.php
+    web.php
+    web-local.php
+    params.php
+    params-local.php
+</code></pre>
+
+<p>То есть общие параметры подключаются к <code>web</code> и <code>console</code> из <code>common</code> и <code>params</code>, а все личные настройки можно спокойно переопределять в <code>*-local</code> файлах.</p>
+<p>Откроем файл <code>web/index.php</code>, найдём строку загрузки конфигурации:</p>
+<pre><code>$config = require(__DIR__ . '/../config/web.php');
+</code></pre>
+
+<p>и заменим её на конструкцию:</p>
+<pre><code>$config = yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/../config/common.php'),
+    require(__DIR__ . '/../config/common-local.php'),
+    require(__DIR__ . '/../config/web.php'),
+    require(__DIR__ . '/../config/web-local.php')
+);
+</code></pre>
+
+<p>Аналогично для консольных команд изменим файл <code>yii</code> в корне. Вместо:</p>
+<pre><code>$config = require(__DIR__ . '/config/console.php');
+</code></pre>
+
+<p>вставим:</p>
+<pre><code>$config = yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/config/common.php'),
+    require(__DIR__ . '/config/common-local.php'),
+    require(__DIR__ . '/config/console.php'),
+    require(__DIR__ . '/config/console-local.php')
+);
+</code></pre>
+
+<p>Теперь проиндексируем все изменения и сделаем ещё одну отметку в системе контроля версий:</p>
+<pre><code>git add .
+git commit -m &quot;Extended config system&quot;
+</code></pre>
+
+<blockquote>
+<p>Этот коммит пропустили...</p>
+</blockquote>
+<h2><a href="#list" name="modules">Переход к модульной структуре</a></h2>
+<p>Через <code>Gii Module Generator</code> создаем два модуля:</p>
+<ol>
+<li>Main </li>
+<li>User</li>
+</ol>
+<p>Регистрируем модули в <code>common.php</code></p>
+<pre><code>'modules' =&gt; [
+    'main' =&gt; [
+        'class' =&gt; 'app\modules\main\Module',
+    ],
+    'user' =&gt; [
+        'class' =&gt; 'app\modules\user\Module',
+    ],
+],
+</code></pre>
+
+<p>Контроллер обратной связи сделаем отдельным в модуле <code>main</code>:</p>
+<pre><code>namespace app\modules\main\controllers;
+
+use app\modules\main\models\ContactForm;
+use yii\web\Controller;
+use Yii;
+
+class ContactController extends Controller
+{
+    public function actions()
+    {
+        return [
+            'captcha' =&gt; [
+                'class' =&gt; 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' =&gt; YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
+
+    public function actionIndex()
+    {
+        $model = new ContactForm();
+        if ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;contact(Yii::$app-&gt;params['adminEmail'])) {
+            Yii::$app-&gt;session-&gt;setFlash('contactFormSubmitted');
+
+            return $this-&gt;refresh();
+        } else {
+            return $this-&gt;render('index', [
+                'model' =&gt; $model,
+            ]);
+        }
+    }
+}
+</code></pre>
+
+<p>В модели <code>ContactForm</code> находим строку подключения <code>CaptchaValidator</code>:</p>
+<pre><code>['verifyCode', 'captcha'],
+</code></pre>
+
+<p>и указываем новый маршрут:</p>
+<pre><code>['verifyCode', 'captcha', 'captchaAction' =&gt; '/main/contact/captcha'],
+</code></pre>
+
+<p>Аналогично в файле представления <code>modules/main/views/contact/index.php</code> находим конструкцию вывода виджета:</p>
+<pre><code>&lt;?= $form-&gt;field($model, 'verifyCode')-&gt;widget(Captcha::className(), [
+    'template' =&gt; '&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-3&quot;&gt;{image}&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;{input}&lt;/div&gt;&lt;/div&gt;',
+]) ?&gt;
+</code></pre>
+
+<p>и добавляем такой же параметр:</p>
+<pre><code>&lt;?= $form-&gt;field($model, 'verifyCode')-&gt;widget(Captcha::className(), [
+    'captchaAction' =&gt; '/main/contact/captcha',
+    'template' =&gt; '&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-3&quot;&gt;{image}&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;{input}&lt;/div&gt;&lt;/div&gt;',
+]) ?&gt;
+</code></pre>
+
+<p>Контроллер по умолчанию в модуле <code>main</code> будет выводить страницы и ошибки:</p>
+<pre><code>namespace app\modules\main\controllers;
+
+use yii\web\Controller;
+
+class DefaultController extends Controller
+{
+    public function actions()
+    {
+        return [
+            'error' =&gt; [
+                'class' =&gt; 'yii\web\ErrorAction',
+            ],
+        ];
+    }
+
+    public function actionIndex()
+    {
+        return $this-&gt;render('index');
+    }
+}
+</code></pre>
+
+<p>К нему переносим все его представления <code>index.php</code> и <code>error.php</code> из папки <code>views/site</code> в папку <code>modules/main/views/default</code>.</p>
+<p>В его контроллер модуля <code>user</code> мы перенесём авторизацию и представление <code>login.php</code>:</p>
+<pre><code>namespace app\modules\user\controllers;
+
+use app\modules\user\models\LoginForm;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+use yii\web\Controller;
+use Yii;
+
+class DefaultController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'access' =&gt; [
+                'class' =&gt; AccessControl::className(),
+                'only' =&gt; ['logout'],
+                'rules' =&gt; [
+                    [
+                        'actions' =&gt; ['logout'],
+                        'allow' =&gt; true,
+                        'roles' =&gt; ['@'],
+                    ],
+                ],
+            ],
+            'verbs' =&gt; [
+                'class' =&gt; VerbFilter::className(),
+                'actions' =&gt; [
+                    'logout' =&gt; ['post'],
+                ],
+            ],
+        ];
+    }
+
+    public function actionLogin()
+    {
+        if (!Yii::$app-&gt;user-&gt;isGuest) {
+            return $this-&gt;goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;login()) {
+            return $this-&gt;goBack();
+        } else {
+            return $this-&gt;render('login', [
+                'model' =&gt; $model,
+            ]);
+        }
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app-&gt;user-&gt;logout();
+
+        return $this-&gt;goHome();
+    }
+}
+</code></pre>
+
+<p>Пустые папки <code>controllers</code>, <code>models</code> и <code>views/site</code> в корне удаляем.</p>
+<p>В итоге получилась новая файловая структура, состоящая из двух модулей:</p>
+<pre><code>assets/
+commands/
+config/
+mail/
+modules/
+    main/
+        controllers/
+            DefaultController.php
+            ContactController.php
+        models/
+            ContactForm.php
+        views/
+            default/
+                error.php
+                index.php
+            contact/
+                index.php
+        Module.php
+    user/
+        controllers/
+            DefaultController.php
+        models/
+            LoginForm.php
+            User.php
+        views/
+            default/
+                login.php
+        Module.php
+tests/
+vendor/
+views/
+    layouts/
+        main.php
+web/
+</code></pre>
+
+<p>Доработаем файлы конфигурации. Укажем маршрут по умолчанию вместо <code>site/index</code> и действие для вывода ошибок вместо <code>site/error</code> в <code>config/web.php</code>. Помимо этого нужно добавить новый путь для свойства <code>loginUrl</code>:</p>
+<pre><code>$config = [
+    'id' =&gt; 'app',
+    'defaultRoute' =&gt; 'main/default/index',
+    'components' =&gt; [
+        'user' =&gt; [
+            'identityClass' =&gt; 'app\modules\user\models\User',
+            'enableAutoLogin' =&gt; true,
+            'loginUrl' =&gt; ['user/default/login'],
+        ],
+        'errorHandler' =&gt; [
+            'errorAction' =&gt; 'main/default/error',
+        ],
+        'request' =&gt; [
+            'cookieValidationKey' =&gt; '',
+        ],
+        'log' =&gt; [
+            'traceLevel' =&gt; YII_DEBUG ? 3 : 0,
+        ],
+    ],
+];
+</code></pre>
+
+<p>Также дополним правила маршрутизации с учётом новых модулей в <code>config/common.php</code>:</p>
+<pre><code>return [
+    'basePath' =&gt; dirname(__DIR__),
+    'bootstrap' =&gt; ['log'],
+    'modules' =&gt; [
+        'main' =&gt; [
+            'class' =&gt; 'app\modules\main\Module',
+        ],
+        'user' =&gt; [
+            'class' =&gt; 'app\modules\user\Module',
+        ],
+    ],
+    'components' =&gt; [
+        'db' =&gt; [
+            'class' =&gt; 'yii\db\Connection',
+            'charset' =&gt; 'utf8',
+        ],
+        'urlManager' =&gt; [
+            'class' =&gt; 'yii\web\UrlManager',
+            'enablePrettyUrl' =&gt; true,
+            'showScriptName' =&gt; false,
+            'rules' =&gt; [
+                '' =&gt; 'main/default/index',
+                'contact' =&gt; 'main/contact/index',
+                '&lt;_a:error&gt;' =&gt; 'main/default/&lt;_a&gt;',
+                '&lt;_a:(login|logout)&gt;' =&gt; 'user/default/&lt;_a&gt;',
+
+                '&lt;_m:[\w\-]+&gt;' =&gt; '&lt;_m&gt;/default/index',
+                '&lt;_m:[\w\-]+&gt;/&lt;_c:[\w\-]+&gt;' =&gt; '&lt;_m&gt;/&lt;_c&gt;/index',
+                '&lt;_m:[\w\-]+&gt;/&lt;_c:[\w\-]+&gt;/&lt;id:\d+&gt;' =&gt; '&lt;_m&gt;/&lt;_c&gt;/view',
+                '&lt;_m:[\w\-]+&gt;/&lt;_c:[\w\-]+&gt;/&lt;_a:[\w\-]+&gt;/&lt;id:\d+&gt;' =&gt; '&lt;_m&gt;/&lt;_c&gt;/&lt;_a&gt;',
+            ],
+        ],
+        'mailer' =&gt; [
+            'class' =&gt; 'yii\swiftmailer\Mailer',
+        ],
+        'cache' =&gt; [
+            'class' =&gt; 'yii\caching\DummyCache',
+        ],
+        'log' =&gt; [
+            'class' =&gt; 'yii\log\Dispatcher',
+        ],
+    ],
+    'params' =&gt; $params,
+];
+</code></pre>
+
+<p>Теперь исправим маршруты ссылок в главном меню <code>views/layouts/main</code>:</p>
+<pre><code>echo Nav::widget([
+    'options' =&gt; ['class' =&gt; 'navbar-nav navbar-right'],
+    'items' =&gt; [
+        ['label' =&gt; 'Home', 'url' =&gt; ['/main/default/index']],
+        ['label' =&gt; 'Contact', 'url' =&gt; ['/main/contact/index']],
+        Yii::$app-&gt;user-&gt;isGuest ?
+            ['label' =&gt; 'Login', 'url' =&gt; ['/user/default/login']] :
+            ['label' =&gt; 'Logout (' . Yii::$app-&gt;user-&gt;identity-&gt;username . ')',
+                'url' =&gt; ['/user/default/logout'],
+                'linkOptions' =&gt; ['data-method' =&gt; 'post']],
+    ],
+]);
+</code></pre>
+
+<h2><a href="#list" name="db_user">Перенос пользователей в БД</a></h2>
+<p>Запустим команду создания первой миграции и ответим <code>yes</code> или <code>y</code>:</p>
+<pre><code>php yii migrate/create create_user_table
+</code></pre>
+
+<p>Если у нас есть папка <code>migrations</code>, то увидим уведомление, что всё у нас получилось:</p>
+<pre><code>New migration created successfully.
+</code></pre>
+
+<p>Структуру таблицы мы можем позаимствовать из миграции расширенного шаблона с некоторыми изменениями. А именно, удалим лишние <code>NOT NULL</code> и добавим индексы для оптимизации поиска:</p>
+<pre><code>use yii\db\Schema;
+use yii\db\Migration;
+
+class m140916_150445_create_user_table extends Migration
+{
+   public function up()
+    {
+        $tableOptions = null;
+        if ($this-&gt;db-&gt;driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+        }
+
+        $this-&gt;createTable('{{%user}}', [
+            'id' =&gt; $this-&gt;primaryKey(),
+            'created_at' =&gt; $this-&gt;integer()-&gt;notNull(),
+            'updated_at' =&gt; $this-&gt;integer()-&gt;notNull(),
+            'username' =&gt; $this-&gt;string()-&gt;notNull(),
+            'auth_key' =&gt; $this-&gt;string(32),
+            'email_confirm_token' =&gt; $this-&gt;string(),
+            'password_hash' =&gt; $this-&gt;string()-&gt;notNull(),
+            'password_reset_token' =&gt; $this-&gt;string(),
+            'email' =&gt; $this-&gt;string()-&gt;notNull(),
+            'status' =&gt; $this-&gt;smallInteger()-&gt;notNull()-&gt;defaultValue(0),
+        ], $tableOptions);
+
+        $this-&gt;createIndex('idx-user-username', '{{%user}}', 'username');
+        $this-&gt;createIndex('idx-user-email', '{{%user}}', 'email');
+        $this-&gt;createIndex('idx-user-status', '{{%user}}', 'status');
+    }
+
+    public function down()
+    {
+        $this-&gt;dropTable('{{%user}}');
+    }
+}
+</code></pre>
+
+<p>Дополнительные параметры таблицы вынесены в переменную <code>$tableOptions</code> и индексам даны уникальные имена в формате <code>idx_{таблица}_{поле}</code>. Это делает миграции кроссплатформенными, то есть полностью рабочими на базах <code>MySQL</code> и <code>PostgreSQL</code>.</p>
+<p>Теперь в командной строке (или в PhpMyAdmin) создадим новую базу данных:</p>
+<pre><code>mysql -uroot --execute='create database yii2_bmatrix character set utf8;'
+</code></pre>
+
+<p>Проверим настройки соединения в <code>config/common-local.php</code>:</p>
+<pre><code>'db' =&gt; [
+    'dsn' =&gt; 'mysql:host=localhost;dbname=yii2_bmatrix',
+    'username' =&gt; 'root',
+    'password' =&gt; '',
+    'tablePrefix' =&gt; 'bmx_',
+],
+</code></pre>
+
+<p>и применим эту миграцию:</p>
+<pre><code>php yii migrate/up
+</code></pre>
+
+<p>Получаем</p>
+<pre><code>Yii Migration Tool (based on Yii v2.0.13.1)
+
+Creating migration history table &quot;bmx_migration&quot;...Done.
+Total 1 new migration to be applied:
+        m180117_180915_create_user_table
+
+Apply the above migration? (yes|no) [no]:y
+*** applying m180117_180915_create_user_table
+    &gt; create table {{%user}} ... done (time: 0.200s)
+    &gt; create index idx-user-username on {{%user}} (username) ... done (time: 0.449s)
+    &gt; create index idx-user-email on {{%user}} (email) ... done (time: 0.096s)
+    &gt; create index idx-user-status on {{%user}} (status) ... done (time: 0.124s)
+*** applied m180117_180915_create_user_table (time: 0.978s)
+
+
+1 migration was applied.
+
+Migrated up successfully.
+</code></pre>
+
+<p>Теперь по этой таблице нужно сгенерировать новую модель <code>User</code>. Прверяем, что в <code>web/index.php</code> константа <code>YII_ENV</code> у нас выставлена в <code>dev</code> и переходим по адресу <code>http://localhost/gii</code>. Там переходим по ссылке <code>Model Generator</code> и вбиваем имена таблицы и модели:</p>
+<blockquote>
+<p><code>Table Name</code>: <code>bmx_user</code></p>
+<p><code>Model Class Name</code>: <code>User</code></p>
+<p><code>Namespace</code>: <code>app\modules\user\models</code></p>
+</blockquote>
+<p>Теперь жмём <strong>Preview</strong>, ставим галочку что хотим перезаписать старую модель и жмём <strong>Generate</strong></p>
+<p>Дополним модель. Первым делом, введём в неё константы для указания статуса, статический метод <code>getStatusesArray</code> для получения их списка и метод <code>getStatusName</code> для получения имени статуса пользователя. Эти методы пригодятся, например, при выводе пользователей в панели управления:</p>
+<pre><code>namespace app\modules\user\models;
+
+use Yii;
+use yii\base\NotSupportedException;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
+
+/**
+ * This is the model class for table &quot;{{%user}}&quot;.
+ *
+ * @property integer $id
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property string $username
+ * @property string $auth_key
+ * @property string $email_confirm_token
+ * @property string $password_hash
+ * @property string $password_reset_token
+ * @property string $email
+ * @property integer $status
+ */
+class User extends ActiveRecord
+{
+    const STATUS_BLOCKED = 0;
+    const STATUS_ACTIVE = 1;
+    const STATUS_WAIT = 2;
+
+    ...
+
+    public function getStatusName()
+    {
+        return ArrayHelper::getValue(self::getStatusesArray(), $this-&gt;status);
+    }
+
+    public static function getStatusesArray()
+    {
+        return [
+            self::STATUS_BLOCKED =&gt; 'Заблокирован',
+            self::STATUS_ACTIVE =&gt; 'Активен',
+            self::STATUS_WAIT =&gt; 'Ожидает подтверждения',
+        ];
+    }
+}
+</code></pre>
+
+<p>Поля <code>created_at</code> и <code>updated_at</code>, в которые нужно вписывать дату при создании и каждом обновлении записи. Для этого нам пригодится уже имеющееся в <code>Yii2</code> поведение:</p>
+<pre><code>use yii\behaviors\TimestampBehavior;
+
+class User extends ActiveRecord
+{
+    ...
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+}
+</code></pre>
+
+<p>В старой модели наш класс заодно осуществлял хранение авторизованного пользователя в <code>Yii::$app-&gt;user-&gt;identity</code> и для этого реализовывал интерфейс <code>IdentityInterface</code>. Допишем методы, которые требует добавить этот интерфейс. Коды методов позаимствуем из того же расширенного шаблона приложения.</p>
+<p>Добавляем методы:</p>
+<pre><code>use yii\web\IdentityInterface;
+
+class User extends ActiveRecord implements IdentityInterface
+{
+    ...
+
+    public static function findIdentity($id)
+    {
+        return static::findOne(['id' =&gt; $id, 'status' =&gt; self::STATUS_ACTIVE]);
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        throw new NotSupportedException('findIdentityByAccessToken is not implemented.');
+    }
+
+    public function getId()
+    {
+        return $this-&gt;getPrimaryKey();
+    }
+
+    public function getAuthKey()
+    {
+        return $this-&gt;auth_key;
+    }
+
+    public function validateAuthKey($authKey)
+    {
+        return $this-&gt;getAuthKey() === $authKey;
+    }
+}
+</code></pre>
+
+<p>В старой модели также были <code>findByUsername</code> и <code>validatePassword</code> для работы класса <code>LoginForm</code>. Добавим и их. В методе <code>findByUsername</code> не будем искать по статусу <code>User::STATUS_ACTIV</code>E. Так как у нас много статусов, то проверки удобнее будет совершать в контроллере или в форме <code>LoginForm</code>. Для хэширования паролей будем использовать новый компонент <code>Security</code>:</p>
+<pre><code>class User extends ActiveRecord implements IdentityInterface
+{
+    ...
+
+    /**
+     * Finds user by username
+     *
+     * @param string $username
+     * @return static|null
+     */
+    public static function findByUsername($username)
+    {
+        return static::findOne(['username' =&gt; $username]);
+    }
+
+    /**
+     * Validates password
+     *
+     * @param string $password password to validate
+     * @return boolean if password provided is valid for current user
+     */
+    public function validatePassword($password)
+    {
+        return Yii::$app-&gt;security-&gt;validatePassword($password, $this-&gt;password_hash);
+    }
+}
+</code></pre>
+
+<p>Перед записью в базу для каждого пользователя нужно генерировать хэш пароля и дополнительный ключ автоматической аутентификации. Добавим методы их генерации и сделаем второй метод автозапускаемым при создании записи:</p>
+<pre><code>class User extends ActiveRecord implements IdentityInterface
+{
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this-&gt;password_hash = Yii::$app-&gt;security-&gt;generatePasswordHash($password);
+    }
+
+    /**
+     * Generates &quot;remember me&quot; authentication key
+     */
+    public function generateAuthKey()
+    {
+        $this-&gt;auth_key = Yii::$app-&gt;security-&gt;generateRandomString();
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($insert) {
+                $this-&gt;generateAuthKey();
+            }
+            return true;
+        }
+        return false;
+    }
+}   
+</code></pre>
+
+<p>Теперь добавим возможность смены пароля. Для этого у нас предусмотрено поле password<em>reset</em>token. При запросе восстановления мы в это поле будем записывать уникальную случайную строку с временной меткой и посылать по электронной почте ссылку с этим хешэм на контроллер с действием активаци. А в контроллере уже найдём этого пользователя по данному хешу и поменяем ему пароль.</p>
+<p>Добавим методы для генерации хеша и поиска по нему:</p>
+<pre><code>class User extends ActiveRecord implements IdentityInterface
+{
+    ...
+
+    /**
+     * Finds user by password reset token
+     *
+     * @param string $token password reset token
+     * @return static|null
+     */
+    public static function findByPasswordResetToken($token)
+    {
+        if (!static::isPasswordResetTokenValid($token)) {
+            return null;
+        }
+        return static::findOne([
+            'password_reset_token' =&gt; $token,
+            'status' =&gt; self::STATUS_ACTIVE,
+        ]);
+    }
+
+    /**
+     * Finds out if password reset token is valid
+     *
+     * @param string $token password reset token
+     * @return boolean
+     */
+    public static function isPasswordResetTokenValid($token)
+    {
+        if (empty($token)) {
+            return false;
+        }
+        $expire = Yii::$app-&gt;params['user.passwordResetTokenExpire'];
+        $parts = explode('_', $token);
+        $timestamp = (int) end($parts);
+        return $timestamp + $expire &gt;= time();
+    }
+
+    /**
+     * Generates new password reset token
+     */
+    public function generatePasswordResetToken()
+    {
+        $this-&gt;password_reset_token = Yii::$app-&gt;security-&gt;generateRandomString() . '_' . time();
+    }
+
+    /**
+     * Removes password reset token
+     */
+    public function removePasswordResetToken()
+    {
+        $this-&gt;password_reset_token = null;
+    }
+}
+</code></pre>
+
+<p>Для регистрирующихся пользователей не помешает сделать подтверждение адреса электронной почты. Для этой цели добавим несколько методов для управления <code>email_confirm_token</code>. При регистрации мы будем присваивать пользователю статус <code>STATUS_WAIT</code>, генерировать ключ и отправлять ссылку с ключом на почту. А в контроллере (при переходе по этой ссылке) найдём пользователя по ключу и активируем:</p>
+<pre><code>class User extends ActiveRecord implements IdentityInterface
+{
+    ...
+
+    /**
+     * @param string $email_confirm_token
+     * @return static|null
+     */
+    public static function findByEmailConfirmToken($email_confirm_token)
+    {
+        return static::findOne(['email_confirm_token' =&gt; $email_confirm_token, 'status' =&gt; self::STATUS_WAIT]);
+    }
+
+    /**
+     * Generates email confirmation token
+     */
+    public function generateEmailConfirmToken()
+    {
+        $this-&gt;email_confirm_token = Yii::$app-&gt;security-&gt;generateRandomString();
+    }
+
+    /**
+     * Removes email confirmation token
+     */
+    public function removeEmailConfirmToken()
+    {
+        $this-&gt;email_confirm_token = null;
+    }
+}
+</code></pre>
+
+<p>В файл <code>params.php</code> добавим параметр, определяющий время «жизни» токена сброса пароля и дополнительное поле <code>supportEmail</code>, значение которого будет использоваться в поле <code>From</code> для исходящих писем:</p>
+<pre><code>return [
+    'adminEmail' =&gt; '',
+    'supportEmail' =&gt; '',
+    'user.passwordResetTokenExpire' =&gt; 3600,
+];
+</code></pre>
+
+<p>В личном же файле <code>config/params-local.php</code> впишем свои значения:</p>
+<pre><code>return [
+    'adminEmail' =&gt; 'admin@site.com',
+    'supportEmail' =&gt; 'info@site.com',
+];
+</code></pre>
+
+<p>Модифицируем класс <code>LoginForm</code>. А именно в валидатор <code>validatePassword</code> добавим проверку статуса пользователя. В целях безопасности проверку будем осуществлять только при правильном пароле. Это не позволит взломщику узнать даже имена пользователей. Всё, что он увидит – это фразу «Неверное имя пользователя или пароль»:</p>
+<pre><code>&lt;?php
+
+namespace app\modules\user\models;
+
+use Yii;
+use yii\base\Model;
+
+/**
+ * LoginForm is the model behind the login form.
+ */
+class LoginForm extends Model
+{
+    public $username;
+    public $password;
+    public $rememberMe = true;
+
+    private $_user = false;
+
+    /**
+     * @return array the validation rules.
+     */
+    public function rules()
+    {
+        return [
+            [['username', 'password'], 'required'],
+            ['rememberMe', 'boolean'],
+            ['password', 'validatePassword'],
+        ];
+    }
+
+    /**
+     * Validates the username and password.
+     * This method serves as the inline validation for password.
+     */
+    public function validatePassword()
+    {
+        if (!$this-&gt;hasErrors()) {
+            $user = $this-&gt;getUser();
+
+            if (!$user || !$user-&gt;validatePassword($this-&gt;password)) {
+                $this-&gt;addError('password', 'Неверное имя пользователя или пароль.');
+            } elseif ($user &amp;&amp; $user-&gt;status == User::STATUS_BLOCKED) {
+                $this-&gt;addError('username', 'Ваш аккаунт заблокирован.');
+            } elseif ($user &amp;&amp; $user-&gt;status == User::STATUS_WAIT) {
+                $this-&gt;addError('username', 'Ваш аккаунт не подтвежден.');
+            }
+        }
+    }
+
+    /**
+     * Logs in a user using the provided username and password.
+     * @return boolean whether the user is logged in successfully
+     */
+    public function login()
+    {
+        if ($this-&gt;validate()) {
+            return Yii::$app-&gt;user-&gt;login($this-&gt;getUser(), $this-&gt;rememberMe ? 3600*24*30 : 0);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Finds user by [[username]]
+     *
+     * @return User|null
+     */
+    public function getUser()
+    {
+        if ($this-&gt;_user === false) {
+            $this-&gt;_user = User::findByUsername($this-&gt;username);
+        }
+
+        return $this-&gt;_user;
+    }
+}
+</code></pre>
+
+<p>Теперь позаимствуем класс формы регистрации пользователей <code>SignupForm</code> из advanced-шаблона, дополнив его выводом капчи <code>verifyCode</code>, установкой статуса <code>User::STATUS_WAIT</code>, вызовом генерации токена подтверждения и отправке этого токена по почте:</p>
+<pre><code>namespace app\modules\user\models;
+
+use yii\base\Model;
+use Yii;
+
+/**
+ * Signup form
+ */
+class SignupForm extends Model
+{
+    public $username;
+    public $email;
+    public $password;
+    public $verifyCode;
+
+    public function rules()
+    {
+        return [
+            ['username', 'filter', 'filter' =&gt; 'trim'],
+            ['username', 'required'],
+            ['username', 'match', 'pattern' =&gt; '#^[\w_-]+$#i'],
+            ['username', 'unique', 'targetClass' =&gt; User::className(), 'message' =&gt; 'This username has already been taken.'],
+            ['username', 'string', 'min' =&gt; 2, 'max' =&gt; 255],
+
+            ['email', 'filter', 'filter' =&gt; 'trim'],
+            ['email', 'required'],
+            ['email', 'email'],
+            ['email', 'unique', 'targetClass' =&gt; User::className(), 'message' =&gt; 'This email address has already been taken.'],
+
+            ['password', 'required'],
+            ['password', 'string', 'min' =&gt; 6],
+
+            ['verifyCode', 'captcha', 'captchaAction' =&gt; '/user/default/captcha'],
+        ];
+    }
+
+    /**
+     * Signs user up.
+     *
+     * @return User|null the saved model or null if saving fails
+     */
+    public function signup()
+    {
+        if ($this-&gt;validate()) {
+            $user = new User();
+            $user-&gt;username = $this-&gt;username;
+            $user-&gt;email = $this-&gt;email;
+            $user-&gt;setPassword($this-&gt;password);
+            $user-&gt;status = User::STATUS_WAIT;
+            $user-&gt;generateAuthKey();
+            $user-&gt;generateEmailConfirmToken();
+
+            if ($user-&gt;save()) {
+                Yii::$app-&gt;mailer-&gt;compose('@app/modules/user/mails/emailConfirm', ['user' =&gt; $user])
+                    -&gt;setFrom([Yii::$app-&gt;params['supportEmail'] =&gt; Yii::$app-&gt;name])
+                    -&gt;setTo($this-&gt;email)
+                    -&gt;setSubject('Email confirmation for ' . Yii::$app-&gt;name)
+                    -&gt;send();
+                return $user;
+            }
+        }
+
+        return null;
+    }
+}
+</code></pre>
+
+<p>Немного дополним...</p>
+<blockquote>
+<p>В исходном приложении без модульной структуры все представления писем хранятся в папке <code>mail</code> в корне. При переходе к модульной структуре желательно переместить письма тоже в свои модули. Так что при написании письмо первым параметром укажем новый путь <code>@app/modules/user/mails</code> для файла письма <code>emailConfirm.php</code>.</p>
+</blockquote>
+<p>Создадим файл <code>modules\user\mail\emailConfirm.php</code>. В него поместим приветствие и ссылку:</p>
+<pre><code>&lt;?php
+use yii\helpers\Html;
+
+/* @var $this yii\web\View */
+/* @var $user app\modules\user\models\User */
+
+$confirmLink = Yii::$app-&gt;urlManager-&gt;createAbsoluteUrl(['user/default/email-confirm', 'token' =&gt; $user-&gt;email_confirm_token]);
+?&gt;
+
+Здравствуйте, &lt;?= Html::encode($user-&gt;username) ?&gt;!
+
+Для подтверждения адреса пройдите по ссылке:
+
+&lt;?= Html::a(Html::encode($confirmLink), $confirmLink) ?&gt;
+
+Если Вы не регистрировались у на нашем сайте, то просто удалите это письмо.
+</code></pre>
+
+<p>Остальные формы <a href="https://github.com/yiisoft/yii2-app-advanced/blob/master/frontend/models/PasswordResetRequestForm.php"><code>PasswordResetRequestForm</code></a> и <a href="https://github.com/yiisoft/yii2-app-advanced/blob/master/frontend/models/ResetPasswordForm.php"><code>ResetPasswordForm</code></a> можно взять из папки <a href="https://github.com/yiisoft/yii2-app-advanced/tree/master/frontend/models"><code>frontend\models</code></a> <a href="https://github.com/yiisoft/yii2-app-advanced"><code>advanced</code>-приложения</a>. Просто заменим в них пространства имён:</p>
+<pre><code>namespace frontend\models;
+
+use common\models\User;
+use yii\base\Model;
+
+/**
+ * Password reset request form
+ */
+class PasswordResetRequestForm extends Model
+...
+</code></pre>
+
+<p>на другие адреса:</p>
+<pre><code>namespace app\modules\user\models;
+
+use app\modules\user\models\User;
+use yii\base\Model;
+
+/**
+ * Password reset request form
+ */
+class PasswordResetRequestForm extends Model
+...
+</code></pre>
+
+<h3></h3>
+<pre><code>requestPasswordResetToken.php
+resetPassword.php
+signup.php
+</code></pre>
+
+<p>Изменим в <code>PasswordResetRequestForm</code> относительный путь до представления письма на полный:</p>
+<p><code>Yii::$app-&gt;mailer-&gt;compose('@app/modules/user/mails/passwordReset', ['user' =&gt; $user])</code></p>
+<p>И от себя добавим форму подтверждения <code>Email</code>-адреса <code>EmailConfirmForm</code> по примеру формы сброса пароля. В ней мы будем искать пользователя по токену, вызывая <code>User::findByEmailConfirmToken</code>, активировать его и очищать поле <code>email_confirm_token</code>:</p>
+<pre><code>namespace app\modules\user\models;
+
+use yii\base\InvalidParamException;
+use yii\base\Model;
+use Yii;
+
+class EmailConfirmForm extends Model
+{
+    /**
+     * @var User
+     */
+    private $_user;
+
+    /**
+     * Creates a form model given a token.
+     *
+     * @param  string $token
+     * @param  array $config
+     * @throws \yii\base\InvalidParamException if token is empty or not valid
+     */
+    public function __construct($token, $config = [])
+    {
+        if (empty($token) || !is_string($token)) {
+            throw new InvalidParamException('Отсутствует код подтверждения.');
+        }
+        $this-&gt;_user = User::findByEmailConfirmToken($token);
+        if (!$this-&gt;_user) {
+            throw new InvalidParamException('Неверный токен.');
+        }
+        parent::__construct($config);
+    }
+
+    /**
+     * Confirm email.
+     *
+     * @return boolean if email was confirmed.
+     */
+    public function confirmEmail()
+    {
+        $user = $this-&gt;_user;
+        $user-&gt;status = User::STATUS_ACTIVE;
+        $user-&gt;removeEmailConfirmToken();
+
+        return $user-&gt;save();
+    }
+}
+</code></pre>
+
+<p>Теперь модифицируем <code>DefaultController</code> модуля <code>user</code>:</p>
+<pre><code>namespace app\modules\user\controllers;
+
+use app\modules\user\models\EmailConfirmForm;
+use app\modules\user\models\LoginForm;
+use app\modules\user\models\PasswordResetRequestForm;
+use app\modules\user\models\PasswordResetForm;
+use app\modules\user\models\SignupForm;
+use yii\base\InvalidParamException;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+use yii\web\BadRequestHttpException;
+use yii\web\Controller;
+use Yii;
+
+class DefaultController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'access' =&gt; [
+                'class' =&gt; AccessControl::className(),
+                'only' =&gt; ['logout', 'signup'],
+                'rules' =&gt; [
+                    [
+                        'actions' =&gt; ['signup'],
+                        'allow' =&gt; true,
+                        'roles' =&gt; ['?'],
+                    ],
+                    [
+                        'actions' =&gt; ['logout'],
+                        'allow' =&gt; true,
+                        'roles' =&gt; ['@'],
+                    ],
+                ],
+            ],
+            'verbs' =&gt; [
+                'class' =&gt; VerbFilter::className(),
+                'actions' =&gt; [
+                    'logout' =&gt; ['post'],
+                ],
+            ],
+        ];
+    }
+
+    public function actions()
+    {
+        return [
+            'captcha' =&gt; [
+                'class' =&gt; 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' =&gt; YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
+
+    public function actionLogin()
+    {
+        if (!Yii::$app-&gt;user-&gt;isGuest) {
+            return $this-&gt;goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;login()) {
+            return $this-&gt;goBack();
+        } else {
+            return $this-&gt;render('login', [
+                'model' =&gt; $model,
+            ]);
+        }
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app-&gt;user-&gt;logout();
+
+        return $this-&gt;goHome();
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model-&gt;load(Yii::$app-&gt;request-&gt;post())) {
+            if ($user = $model-&gt;signup()) {
+                Yii::$app-&gt;getSession()-&gt;setFlash('success', 'Подтвердите ваш электронный адрес.');
+                return $this-&gt;goHome();
+            }
+        }
+
+        return $this-&gt;render('signup', [
+            'model' =&gt; $model,
+        ]);
+    }
+
+    public function actionEmailConfirm($token)
+    {
+        try {
+            $model = new EmailConfirmForm($token);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e-&gt;getMessage());
+        }
+
+        if ($model-&gt;confirmEmail()) {
+            Yii::$app-&gt;getSession()-&gt;setFlash('success', 'Спасибо! Ваш Email успешно подтверждён.');
+        } else {
+            Yii::$app-&gt;getSession()-&gt;setFlash('error', 'Ошибка подтверждения Email.');
+        }
+
+        return $this-&gt;goHome();
+    }
+
+    public function actionPasswordResetRequest()
+    {
+        $model = new PasswordResetRequestForm();
+        if ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;validate()) {
+            if ($model-&gt;sendEmail()) {
+                Yii::$app-&gt;getSession()-&gt;setFlash('success', 'Спасибо! На ваш Email было отправлено письмо со ссылкой на восстановление пароля.');
+
+                return $this-&gt;goHome();
+            } else {
+                Yii::$app-&gt;getSession()-&gt;setFlash('error', 'Извините. У нас возникли проблемы с отправкой.');
+            }
+        }
+
+        return $this-&gt;render('passwordResetRequest', [
+            'model' =&gt; $model,
+        ]);
+    }
+
+    public function actionPasswordReset($token)
+    {
+        try {
+            $model = new PasswordResetForm($token);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e-&gt;getMessage());
+        }
+
+        if ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;validate() &amp;&amp; $model-&gt;resetPassword()) {
+            Yii::$app-&gt;getSession()-&gt;setFlash('success', 'Спасибо! Пароль успешно изменён.');
+
+            return $this-&gt;goHome();
+        }
+
+        return $this-&gt;render('passwordReset', [
+            'model' =&gt; $model,
+        ]);
+    }
+}
+</code></pre>
+
+<p>Оповещения об успешности операции отправляются в сессию в виде одноразовых <code>Flash</code>-сообщений. Для их вывода в шаблоне имеется готовый виджет <code>Alert</code> в папке <code>widgets</code> и пространство имён <code>app\widgets</code>. Он подключен к шаблону <code>views\layouts\main</code> после хлебных крошек:</p>
+<pre><code>&lt;?php
+
+...
+use yii\widgets\Breadcrumbs;
+use app\widgets\Alert;
+
+?&gt;
+...
+&lt;div class=&quot;container&quot;&gt;
+    &lt;?= Breadcrumbs::widget([
+        'links' =&gt; isset($this-&gt;params['breadcrumbs']) ? $this-&gt;params['breadcrumbs'] : [],
+    ]) ?&gt;
+    &lt;?= Alert::widget() ?&gt;
+    &lt;?= $content ?&gt;
+&lt;/div&gt;
+...
+</code></pre>
+
+<p>Представления <code>login</code>, <code>passwordReset</code> и <code>passwordResetRequest</code> копируем из похожих в папке <a href="https://github.com/yiisoft/yii2-app-advanced/tree/master/frontend/views/site"><code>frontend/views/site</code></a>. Представление <code>login.php</code> будет выглядеть так:</p>
+<pre><code>&lt;?php
+
+    use yii\helpers\Html;
+    use yii\bootstrap\ActiveForm;
+
+    /* @var $this yii\web\View */
+    /* @var $form yii\bootstrap\ActiveForm */
+    /* @var $model \app\modules\user\models\LoginForm */
+
+    $this-&gt;title = 'Login';
+    $this-&gt;params['breadcrumbs'][] = $this-&gt;title;
+
+?&gt;
+
+&lt;div class=&quot;user-default-login&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;h1&gt;&lt;?= Html::encode($this-&gt;title) ?&gt;&lt;/h1&gt;
+        &lt;p&gt;Please fill out the following fields to login:&lt;/p&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-lg-5&quot;&gt;
+                &lt;?php $form = ActiveForm::begin(['id' =&gt; 'login-form']); ?&gt;
+                &lt;?= $form-&gt;field($model, 'username') ?&gt;
+                &lt;?= $form-&gt;field($model, 'password')-&gt;passwordInput() ?&gt;
+                &lt;?= $form-&gt;field($model, 'rememberMe')-&gt;checkbox() ?&gt;
+                &lt;div style=&quot;color:#999;margin:1em 0&quot;&gt;
+                    If you forgot your password you can &lt;?= Html::a('reset it', ['password-reset-request']) ?&gt;.
+                &lt;/div&gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;?= Html::submitButton('Login', ['class' =&gt; 'btn btn-primary', 'name' =&gt; 'login-button']) ?&gt;
+                &lt;/div&gt;
+                &lt;?php ActiveForm::end(); ?&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Также нужно добавить свой шаблон письма для изменения пароля <code>modules/user/mails/passwordReset.php</code>:</p>
+<pre><code>&lt;?php
+use yii\helpers\Html;
+
+/* @var $this yii\web\View */
+/* @var $user app\modules\user\models\User */
+
+$resetLink = Yii::$app-&gt;urlManager-&gt;createAbsoluteUrl(['user/default/password-reset', 'token' =&gt; $user-&gt;password_reset_token]);
+?&gt;
+
+Здравствуйте, &lt;?= Html::encode($user-&gt;username) ?&gt;!
+
+Пройдите по ссылке, чтобы сменить пароль:
+
+&lt;?= Html::a(Html::encode($resetLink), $resetLink) ?&gt;
+</code></pre>
+
+<p>Представление <code>modules/user/views/default/signup.php</code> тоже позаимствуем, но скопируем в него вывод <code>captcha</code> из представления модуля <code>contact</code> с новым значением параметра <code>'captchaAction' =&gt; '/user/default/captcha'</code>:</p>
+<pre><code>use yii\captcha\Captcha;
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $form yii\bootstrap\ActiveForm */
+/* @var $model app\modules\user\models\SignupForm */
+
+$this-&gt;title = 'Signup';
+$this-&gt;params['breadcrumbs'][] = $this-&gt;title;
+?&gt;
+&lt;div class=&quot;user-default-signup&quot;&gt;
+    &lt;h1&gt;&lt;?= Html::encode($this-&gt;title) ?&gt;&lt;/h1&gt;
+
+    &lt;p&gt;Please fill out the following fields to signup:&lt;/p&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-lg-5&quot;&gt;
+            &lt;?php $form = ActiveForm::begin(['id' =&gt; 'form-signup']); ?&gt;
+            &lt;?= $form-&gt;field($model, 'username') ?&gt;
+            &lt;?= $form-&gt;field($model, 'email') ?&gt;
+            &lt;?= $form-&gt;field($model, 'password')-&gt;passwordInput() ?&gt;
+            &lt;?= $form-&gt;field($model, 'verifyCode')-&gt;widget(Captcha::className(), [
+                'captchaAction' =&gt; '/user/default/captcha',
+                'template' =&gt; '&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-lg-3&quot;&gt;{image}&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;{input}&lt;/div&gt;&lt;/div&gt;',
+            ]) ?&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;?= Html::submitButton('Signup', ['class' =&gt; 'btn btn-primary', 'name' =&gt; 'signup-button']) ?&gt;
+            &lt;/div&gt;
+            &lt;?php ActiveForm::end(); ?&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2><a href="#list" name="feedback">Автозаполнение формы обратной связи</a></h2>
+<p>Добавим автоподстановку значений в поля формы:</p>
+<pre><code>namespace app\modules\main\controllers;
+
+use app\modules\main\models\ContactForm;
+use yii\web\Controller;
+use Yii;
+
+class ContactController extends Controller
+{
+    ...
+
+    public function actionIndex()
+    {
+        $model = new ContactForm();
+        if ($user = Yii::$app-&gt;user-&gt;identity) {
+            /** @var \app\modules\user\models\User $user */
+            $model-&gt;name = $user-&gt;username;
+            $model-&gt;email = $user-&gt;email;
+        }
+        if ($model-&gt;load(Yii::$app-&gt;request-&gt;post()) &amp;&amp; $model-&gt;contact(Yii::$app-&gt;params['adminEmail'])) {
+            Yii::$app-&gt;session-&gt;setFlash('contactFormSubmitted');
+            return $this-&gt;refresh();
+        } else {
+            return $this-&gt;render('index', [
+                'model' =&gt; $model,
+            ]);
+        }
+    }
+}
+</code></pre>
+
+<h2><a href="#list" name="console">Консольное управление</a></h2>
+<p>Создадим свою консольную команду для управления пользователями. Добавим в неё примитивный набор действий:</p>
+<pre><code>namespace app\commands;
+
+use app\modules\user\models\User;
+use yii\base\Model;
+use yii\console\Controller;
+use yii\console\Exception;
+use yii\helpers\Console;
+
+class UsersController extends Controller
+{
+    public function actionIndex()
+    {
+        echo 'yii users/create' . PHP_EOL;
+        echo 'yii users/remove' . PHP_EOL;
+        echo 'yii users/activate' . PHP_EOL;
+        echo 'yii users/change-password' . PHP_EOL;
+    }
+
+    public function actionCreate()
+    {
+        $model = new User();
+        $this-&gt;readValue($model, 'username');
+        $this-&gt;readValue($model, 'email');
+        $model-&gt;setPassword($this-&gt;prompt('Password:', [
+            'required' =&gt; true,
+            'pattern' =&gt; '#^.{6,255}$#i',
+            'error' =&gt; 'More than 6 symbols',
+        ]));
+        $model-&gt;generateAuthKey();
+        $this-&gt;log($model-&gt;save());
+    }
+
+    public function actionRemove()
+    {
+        $username = $this-&gt;prompt('Username:', ['required' =&gt; true]);
+        $model = $this-&gt;findModel($username);
+        $this-&gt;log($model-&gt;delete());
+    }
+
+    public function actionActivate()
+    {
+        $username = $this-&gt;prompt('Username:', ['required' =&gt; true]);
+        $model = $this-&gt;findModel($username);
+        $model-&gt;status = User::STATUS_ACTIVE;
+        $model-&gt;removeEmailConfirmToken();
+        $this-&gt;log($model-&gt;save());
+    }
+
+    public function actionChangePassword()
+    {
+        $username = $this-&gt;prompt('Username:', ['required' =&gt; true]);
+        $model = $this-&gt;findModel($username);
+        $model-&gt;setPassword($this-&gt;prompt('New password:', [
+            'required' =&gt; true,
+            'pattern' =&gt; '#^.{6,255}$#i',
+            'error' =&gt; 'More than 6 symbols',
+        ]));
+        $this-&gt;log($model-&gt;save());
+    }
+
+    /**
+     * @param string $username
+     * @throws \yii\console\Exception
+     * @return User the loaded model
+     */
+    private function findModel($username)
+    {
+        if (!$model = User::findOne(['username' =&gt; $username])) {
+            throw new Exception('User not found');
+        }
+        return $model;
+    }
+
+    /**
+     * @param Model $model
+     * @param string $attribute
+     */
+    private function readValue($model, $attribute)
+    {
+        $model-&gt;$attribute = $this-&gt;prompt(mb_convert_case($attribute, MB_CASE_TITLE, 'utf-8') . ':', [
+            'validator' =&gt; function ($input, &amp;$error) use ($model, $attribute) {
+                $model-&gt;$attribute = $input;
+                if ($model-&gt;validate([$attribute])) {
+                    return true;
+                } else {
+                    $error = implode(',', $model-&gt;getErrors($attribute));
+                    return false;
+                }
+            },
+        ]);
+    }
+
+    /**
+     * @param bool $success
+     */
+    private function log($success)
+    {
+        if ($success) {
+            $this-&gt;stdout('Success!', Console::FG_GREEN, Console::BOLD);
+        } else {
+            $this-&gt;stderr('Error!', Console::FG_RED, Console::BOLD);
+        }
+        echo PHP_EOL;
+    }
+}
+</code></pre>
+
+<p>Теперь можно выполнить:</p>
+<pre><code>php yii users/create
+</code></pre>
+
+<p>и ввести данные пользователя.</p>
+<h2><a name="template" href="list">Доработка шаблона приложения</a></h2>
+<p>Заголовок окна главной страницы формируем в файле представления <code>index.php</code> модуля <code>main</code>:</p>
+<pre><code>&lt;?php
+/* @var $this yii\web\View */
+$this-&gt;title = Yii::$app-&gt;name;
+?&gt;
+</code></pre>
+
+<p>В навигатор добавим логотип и имя:</p>
+<pre><code>...
+NavBar::begin([
+    'brandLabel' =&gt; '&lt;img class=&quot;logo&quot; src=&quot;/img/B-Matrix.png&quot;&gt;' . Yii::$app-&gt;name,
+    'brandUrl' =&gt; Yii::$app-&gt;homeUrl,
+    'options' =&gt; [
+        'class' =&gt; 'navbar-inverse navbar-fixed-top',
+    ],
+]);
+...
+</code></pre>
+
+<p>Главная страница <code>modules/main/views/default/index.php</code>:</p>
+<pre><code>&lt;div class=&quot;main-default-index&quot;&gt;
+    &lt;div class=&quot;body-content&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;jumbotron&quot;&gt;
+                &lt;h1&gt;B-Matrix CMS Yii2&lt;/h1&gt;
+                &lt;img class=&quot;logo-yii&quot; src=&quot;/img/B-Matrix.png&quot;&gt;
+                &lt;img class=&quot;logo-yii&quot; src=&quot;/img/yii.png&quot;&gt;
+                &lt;p class=&quot;lead&quot;&gt;Панель управления и инструменты на базе Yii2-фреймворка. Лёгкий CMS для быстрых сайтов.&lt;/p&gt;
+                &lt;p&gt;&lt;a class=&quot;btn btn-lg btn-success&quot; href=&quot;https://github.com/Yii2You/bmatrix&quot;&gt;Get started with B-Matrix&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;features&quot;&gt;
+            &lt;h2&gt;FEATURES&lt;/h2&gt;
+            &lt;div class=&quot;feature&quot;&gt;
+                &lt;i class=&quot;glyphicon glyphicon-dashboard&quot;&gt;&lt;/i&gt;
+                &lt;h3&gt;Fast engine&lt;/h3&gt;
+                &lt;p&gt;Automatically caches all possible content and makes minimum requests to database.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;feature&quot;&gt;
+                &lt;i class=&quot;glyphicon glyphicon-pencil&quot;&gt;&lt;/i&gt;
+                &lt;h3&gt;Live edit&lt;/h3&gt;
+                &lt;p&gt;The main feature is live editable content. You can easily change everything.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;feature&quot;&gt;
+                &lt;i class=&quot;glyphicon glyphicon-wrench&quot;&gt;&lt;/i&gt;
+                &lt;h3&gt;Easy&lt;/h3&gt;
+                &lt;p&gt;Easyii admin panel is very simple. Also development extremely fast and easy.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;feature&quot;&gt;
+                &lt;i class=&quot;glyphicon glyphicon-thumbs-up&quot;&gt;&lt;/i&gt;
+                &lt;h3&gt;Powered by Yii2&lt;/h3&gt;
+                &lt;p&gt;Yii is a high-performance PHP framework best for developing Web 2.0 applications.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2><a name="lang" href="list">Язык интерфейса приложения</a></h2>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

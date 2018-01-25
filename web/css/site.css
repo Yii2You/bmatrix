@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .wrap {
@@ -23,14 +24,40 @@ body {
 
 .jumbotron {
     text-align: center;
-    background-color: transparent;
+    /*background-color: transparent;*/
+    background-color: #dff0d8;
+
 }
 
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
 }
-
+#features {
+    padding: 30px 0;
+    text-align: center;
+}
+#features .feature {
+    margin: 0 15px;
+    display: inline-block;
+    width: 240px;
+}
+#features h2 {
+    font-weight: 300;
+    font-size: 32px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+#features .feature i {
+    color: #777;
+    font-size: 48px;
+}
+#features h3 {
+    color: #aaa;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
 .not-set {
     color: #c55;
     font-style: italic;

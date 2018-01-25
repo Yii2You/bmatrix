@@ -32,14 +32,17 @@ class ContactForm extends Model
             ['verifyCode', 'captcha', 'captchaAction' => '/main/contact/captcha'],
         ];
     }
-
     /**
      * @return array customized attribute labels
      */
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'name' => Yii::t('app', 'EMAIL_YOU_NAME'),
+            'email' => Yii::t('app', 'USER_EMAIL'),
+            'subject' => Yii::t('app', 'EMAIL_SUBJECT'),
+            'body' => Yii::t('app', 'EMAIL_BODY'),
+            'verifyCode' => Yii::t('app', 'USER_VERIFY_CODE'),
         ];
     }
 
