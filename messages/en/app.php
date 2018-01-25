@@ -48,10 +48,15 @@ return [
     'PLEASE_FILL_FOR_CONTACT' => 'If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.',
     'PLEASE_FILL_FOR_LOGIN' => 'Please fill out the following fields to login',
     'PLEASE_FILL_FOR_RESET_REQUEST' => 'Please fill out your email. A link to reset password will be sent there.',
+    'PLEASE_FILL_FOR_RESET_PASSWORD' => 'Please enter a new password.',
     'PLEASE_FILL_FOR_SIGNUP' => 'Please fill out the following fields to signup',
 
     'POWERED_BY_YII2' => 'Powered by Yii2',
     'POWERED_BY_YII2_BLOCK' => 'Yii2 is a high-performance PHP framework best for developing Web 2.0 applications.',
+
+    'STATUS_BLOCKED' => 'Blocked',
+    'STATUS_ACTIVE' => 'Active',
+    'STATUS_WAIT' => 'Wait',
 
     'TITLE_CONTACT' => 'Contact as',
     'TITLE_LOGIN' => 'Login',

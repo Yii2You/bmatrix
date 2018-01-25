@@ -141,7 +141,7 @@ class DefaultController extends Controller
         }
 
         return $this->render('passwordReset', [
-            'user' => $model,
+            'model' => $model,
         ]);
     }
 }

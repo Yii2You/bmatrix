@@ -1,0 +1,35 @@
+[33mcommit 0ac81feaa2650a2ffa51f71bd25f5f8dcc3ac563[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Bunakov <ilya_bunakov@mail.ru>
+Date:   Thu Jan 25 12:06:38 2018 +0400
+
+    Fixed bugs reset password
+
+[33mcommit 2b113abd2f6a586bb032778a215d5818748a7eb3[m
+Author: Bunakov <ilya_bunakov@mail.ru>
+Date:   Thu Jan 25 10:20:03 2018 +0400
+
+    Template done
+
+[33mcommit 9501d92f15c7677f92ae2fe28b4920e573822485[m
+Author: Bunakov <ilya_bunakov@mail.ru>
+Date:   Wed Jan 17 15:54:11 2018 +0400
+
+    Created project modules
+
+[33mcommit 6ce88f496cab38eeea742b6dace5a3bf73f14265[m
+Author: Bunakov <ilya_bunakov@mail.ru>
+Date:   Wed Jan 17 15:15:45 2018 +0400
+
+    Migrated to asset-packagist
+
+[33mcommit 2426beb952098df35b704b9153e235f3f8f8960a[m
+Author: Bunakov <ilya_bunakov@mail.ru>
+Date:   Wed Jan 17 14:41:07 2018 +0400
+
+    Created project
+
+[33mcommit 5b171e47f95659b121bd8ae1e35e8db5af7ea6dd[m
+Author: Bunakov <ilya_bunakov@mail.ru>
+Date:   Wed Jan 17 14:31:45 2018 +0400
+
+    Initial commit

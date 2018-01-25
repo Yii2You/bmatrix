@@ -47,6 +47,7 @@ class PasswordResetForm extends Model
         return [
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+//            ['targetClass' => User::className()]
         ];
     }
 

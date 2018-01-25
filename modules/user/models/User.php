@@ -27,6 +27,7 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_WAIT = 2;
+
     /**
      * @inheritdoc
      */
@@ -34,6 +35,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return '{{%user}}';
     }
+
     /**
      * @inheritdoc
      */
@@ -43,6 +45,7 @@ class User extends ActiveRecord implements IdentityInterface
             TimestampBehavior::className(),
         ];
     }
+
     /**
      * @inheritdoc
      */
@@ -88,11 +91,12 @@ class User extends ActiveRecord implements IdentityInterface
     public static function getStatusesArray()
     {
         return [
-            self::STATUS_BLOCKED => 'Заблокирован',
-            self::STATUS_ACTIVE => 'Активен',
-            self::STATUS_WAIT => 'Ожидает подтверждения',
+            self::STATUS_BLOCKED => Yii::t('app', 'STATUS_BLOCKED'),
+            self::STATUS_ACTIVE => Yii::t('app', 'STATUS_ACTIVE'),
+            self::STATUS_WAIT => Yii::t('app', 'STATUS_WAIT'),
         ];
     }
+
     /**
      * Finds user by username
      *
@@ -142,6 +146,7 @@ class User extends ActiveRecord implements IdentityInterface
         }
         return false;
     }
+
     /**
      * Finds user by password reset token
      *
@@ -172,7 +177,7 @@ class User extends ActiveRecord implements IdentityInterface
         }
         $expire = Yii::$app->params['user.passwordResetTokenExpire'];
         $parts = explode('_', $token);
-        $timestamp = (int) end($parts);
+        $timestamp = (int)end($parts);
         return $timestamp + $expire >= time();
     }
 
